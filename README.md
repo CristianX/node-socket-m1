@@ -2,8 +2,9 @@
 
 Este es un pequeño servidor de express listo para ejecutarse y servir la carpeta public en la web.
 
-Recuerden que deben de reconstruir los módulos de node con el comando
+## Instalaciones necesarias
+- sockets.io `npm i socket.io --save`
 
-```
-npm install
-```
+
+## Comprobando que SOCKET.IO está implementado correctamente (Desarrollo)
+http://localhost:3000/socket.io/socket.io.js

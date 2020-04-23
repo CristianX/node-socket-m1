@@ -8,3 +8,6 @@ Este es un pequeño servidor de express listo para ejecutarse y servir la carpet
 
 ## Comprobando que SOCKET.IO está implementado correctamente (Desarrollo)
 http://localhost:3000/socket.io/socket.io.js
+
+## Url de la app
+https://sockets-prueb-1.herokuapp.com/

@@ -1,7 +1,7 @@
 const express = require('express');
 
 // Seridor hpttp por defecto en node para integración de sockets
-const http = require('https');
+const http = require('http');
 
 const path = require('path');
 

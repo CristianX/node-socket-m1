@@ -29,6 +29,12 @@ io.on('connection', (client) => {
 
     console.log('Usuario conectado');
 
+
+    // Detectando desconexión del usuario
+    client.on('disconnect', () => {
+        console.log('Usuario desconectado');
+    });
+
 });
 
 // Escuchando servidor

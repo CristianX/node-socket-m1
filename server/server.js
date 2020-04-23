@@ -23,6 +23,14 @@ app.use(express.static(publicPath));
 // IO = está es la comunicación directa del backend
 let io = socketIO(server);
 
+// Para saber cuando un usario se conecta al server
+// client tiene toda la información de la computadora o de la conexión que se establecio
+io.on('connection', (client) => {
+
+    console.log('Usuario conectado');
+
+});
+
 // Escuchando servidor
 server.listen(port, (err) => {
 

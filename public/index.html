@@ -32,7 +32,11 @@
         socket.emit('enviarMensaje', {
             usuario: 'Cristian',
             mensaje: 'Hola mundo'
+        }, function(resp) {
+            // console.log('Se disparó el callback');
+            console.log('Respuesta server: ', resp);
         });
+
 
         // Escuchando información del server
         socket.on('enviarMensaje', function(mensaje) {

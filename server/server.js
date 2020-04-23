@@ -37,8 +37,24 @@ io.on('connection', (client) => {
 
     //  Esuchar al cliente (La información enviada desde el frontEnd) (enviarMensaje es el mismo nombre que se envio del frontEnd)
     // Solo comunicación de uno a uno
-    client.on('enviarMensaje', (mensaje) => {
+    client.on('enviarMensaje', (mensaje, callback) => {
         console.log(mensaje);
+
+
+        // Retroalimentación si todo salió bien
+        if (mensaje.usuario) {
+            callback({
+                resp: 'Todo salió bien!'
+            });
+        } else {
+            callback({
+                resp: 'TODO SALIÓ MAL!!'
+            });
+        }
+
+        // Retroalimentación si todo salió bien
+        // callback();
+
     });
 
     // Enviando mensaje al cliente

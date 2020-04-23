@@ -21,50 +21,11 @@ app.use(express.static(publicPath));
 
 // Inicializando sockets.io
 // IO = está es la comunicación directa del backend
-let io = socketIO(server);
+module.exports.io = socketIO(server); // Exportando desde server hasta sockets/sockets.js
 
-// Para saber cuando un usario se conecta al server
-// client tiene toda la información de la computadora o de la conexión que se establecio
-io.on('connection', (client) => {
+// utilizando sockets
+require('./sockets/socket');
 
-    console.log('Usuario conectado');
-
-
-    // Detectando desconexión del usuario
-    client.on('disconnect', () => {
-        console.log('Usuario desconectado');
-    });
-
-    //  Esuchar al cliente (La información enviada desde el frontEnd) (enviarMensaje es el mismo nombre que se envio del frontEnd)
-    // Solo comunicación de uno a uno
-    client.on('enviarMensaje', (mensaje, callback) => {
-        console.log(mensaje);
-
-
-        // Retroalimentación si todo salió bien
-        if (mensaje.usuario) {
-            callback({
-                resp: 'Todo salió bien!'
-            });
-        } else {
-            callback({
-                resp: 'TODO SALIÓ MAL!!'
-            });
-        }
-
-        // Retroalimentación si todo salió bien
-        // callback();
-
-    });
-
-    // Enviando mensaje al cliente
-    client.emit('enviarMensaje', {
-        usuario: 'Administrador',
-        mensaje: 'Bienvenido a esta aplicación'
-    });
-
-
-});
 
 // Escuchando servidor
 server.listen(port, (err) => {

@@ -39,7 +39,13 @@ io.on('connection', (client) => {
     // Solo comunicación de uno a uno
     client.on('enviarMensaje', (mensaje) => {
         console.log(mensaje);
-    })
+    });
+
+    // Enviando mensaje al cliente
+    client.emit('enviarMensaje', {
+        usuario: 'Administrador',
+        mensaje: 'Bienvenido a esta aplicación'
+    });
 
 
 });

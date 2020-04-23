@@ -33,6 +33,11 @@
             usuario: 'Cristian',
             mensaje: 'Hola mundo'
         });
+
+        // Escuchando información del server
+        socket.on('enviarMensaje', function(mensaje) {
+            console.log('Servidor', mensaje);
+        });
     </script>
 
 </body>

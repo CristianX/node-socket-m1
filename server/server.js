@@ -35,6 +35,13 @@ io.on('connection', (client) => {
         console.log('Usuario desconectado');
     });
 
+    //  Esuchar al cliente (La información enviada desde el frontEnd) (enviarMensaje es el mismo nombre que se envio del frontEnd)
+    // Solo comunicación de uno a uno
+    client.on('enviarMensaje', (mensaje) => {
+        console.log(mensaje);
+    })
+
+
 });
 
 // Escuchando servidor

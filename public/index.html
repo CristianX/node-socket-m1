@@ -23,9 +23,16 @@
             console.log('Conectado al servidor');
         });
 
+        // on es para escuchar información
         socket.on('disconnect', function() {
             console.log('Se perdió la conexión con el servidor');
-        })
+        });
+
+        // Enviar información, se puede enviar booleans, string, etc pero no es recomendable, lo mejor es mandar un objeto
+        socket.emit('enviarMensaje', {
+            usuario: 'Cristian',
+            mensaje: 'Hola mundo'
+        });
     </script>
 
 </body>
